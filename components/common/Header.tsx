@@ -1,6 +1,8 @@
 'use client'
 import React, { useState } from 'react';
 import { FileText, Menu, X, } from 'lucide-react';
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+import Link from 'next/link';
 
 interface NavItem {
     href: string;
@@ -41,9 +43,14 @@ export const Header: React.FC = () => {
                                 {item.label}
                             </a>
                         ))}
-                        <button className="bg-white/20 text-white px-6 py-2 rounded-full hover:bg-white/30 transition-all backdrop-blur-sm">
-                            Sign In
-                        </button>
+                        <SignedOut>
+                            <Link href='/sign-up' className="bg-white/20 text-white px-6 py-2 rounded-full hover:bg-white/30 transition-all backdrop-blur-sm">
+                                Sign In
+                            </Link>
+                        </SignedOut>
+                        <SignedIn>
+                            <UserButton />
+                        </SignedIn>
                     </nav>
 
                     {/* Mobile Menu Button */}
