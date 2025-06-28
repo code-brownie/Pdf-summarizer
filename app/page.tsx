@@ -1,9 +1,10 @@
-import { Button } from "@/components/ui/button";
+import { DemoSection } from "@/components/home/Demo-section";
+import { Hero } from "@/components/home/Hero-section";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-(family-name:--font-geist-sans)">
-      <Button variant={'outline'}>ShadCn Button</Button>
-    </div>
+    <main className="bg-gradient-to-br from-teal-600 via-teal-700 to-orange-500">
+      <Hero />
+    </main>
   );
 }
