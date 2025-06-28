@@ -1,0 +1,8 @@
+model Document {
+    id      String   @id @default(uuid())
+    userId  String
+    title   String?
+    fileUrl String
+    summary Summary?
+    user    User     @relation(fields: [userId], references: [id])
+}
