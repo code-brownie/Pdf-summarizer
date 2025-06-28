@@ -3,7 +3,7 @@ import { Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/common/Header";
 import { Footer } from "@/components/common/Footer";
-
+import { ClerkProvider, } from '@clerk/nextjs'
 const SourceSans = Source_Sans_3({
   variable: "--font-sans",
   subsets: ["latin"],
@@ -22,14 +22,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${SourceSans.variable} antialiased min-h-screen bg-gradient-to-br from-teal-600 via-teal-700 to-orange-500`}
-      >
-        <Header />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${SourceSans.variable} antialiased min-h-screen bg-gradient-to-br from-teal-600 via-teal-700 to-orange-500`}
+        >
+          <Header />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
