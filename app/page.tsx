@@ -1,4 +1,3 @@
-import { DemoSection } from "@/components/home/Demo-section";
 import { Hero } from "@/components/home/Hero-section";
 
 export default function Home() {
